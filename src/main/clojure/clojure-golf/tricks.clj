@@ -46,6 +46,14 @@
 (filter #(= "Foo" %) ["Foo" "Bar" "Baz"])
 (filter #{"Foo"} ["Foo" "Bar" "Baz"])
 
+;; scientific notation can shorten certain common large constants
+1000000
+1E6
+
+;; you can still use % in ananoymous function with multiple arguments
+;; also spaces can be removed
+(#(str %1 %2 %3) "A" "B" "C")
+(#(str%%2%3) "A" "B" "C")
 
 
 
