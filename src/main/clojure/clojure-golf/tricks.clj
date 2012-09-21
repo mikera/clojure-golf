@@ -51,10 +51,12 @@
 1E6
 
 ;; you can still use % in ananoymous function with multiple arguments
-;; also spaces can be removed
-(#(str %1 %2 %3) "A" "B" "C")
-(#(str%%2%3) "A" "B" "C")
+;; in addition, spaces can be removed
+(#(str %1 %3 %2) "A" "B" "C")
+(#(str%%3%2) "A" "B" "C")
 
-
+;; apply can be shorter than reduce
+(reduce + (range 1000))
+(apply + (range 1000))
 
 
