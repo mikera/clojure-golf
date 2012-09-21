@@ -33,7 +33,8 @@
 (reverse (seq "Abracadabra"))
 (reverse "Abracadabra")
 
-;; strings used togeter with maps are useful to generate longer sequences
+;; strings used together with maps are useful to generate longer sequences
+(let[a "Eggs"b"Jelly"c"Toast"][a b c a a b b c c a a a b b b c c c])
 (map{\a"Eggs"\b"Jelly"\c"Toast"}"abcaabbccaaabbbccc")
 
 ;; if you use a function repeatedly, it is often better to alias it
@@ -41,7 +42,9 @@
 (for [i (range 100)m[mod]] [(m i 3) (m i 5) (m i 7) (m i 9)])
 (for [i (range 100)m[#(mod i %)]] [(m 3) (m 5) (m 7) (m 9)])
 
-
+;; set literals are useful for filtering
+(filter #(= "Foo" %) ["Foo" "Bar" "Baz"])
+(filter #{"Foo"} ["Foo" "Bar" "Baz"])
 
 
 
