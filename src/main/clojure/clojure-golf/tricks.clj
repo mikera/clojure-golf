@@ -60,9 +60,10 @@
 (reduce + (range 1000))
 (apply + (range 1000))
 
-;; #(do%) is shorter than identity
+;; #(do%) is shorter than identity and comp is even shorter
 (partition-by identity [1 1 1 2 3 3 3 3 6 6 6 6])
 (partition-by #(do%) [1 1 1 2 3 3 3 3 6 6 6 6])
+(partition-by comp [1 1 1 2 3 3 3 3 6 6 6 6])
 
 ;; indexed access on vectors is shorter than first (or second etc..)
 (first [:a :b]) 
