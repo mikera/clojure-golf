@@ -7,3 +7,9 @@
 
 ;; First version - 72 Chars
 (some #(if(=(apply +%)72)%)(partition 18(repeatedly #(+(rand-int 3)3))))
+
+;; Fun version - 64 chars
+(shuffle(take 18(concat(repeat(*(rand-int 9)2)4)(cycle [3 5]))))
+
+;; Ultra version - 55 chars
+(shuffle(mapcat #([[4 4][3 5]%](rand-int 2))(range 9)))
